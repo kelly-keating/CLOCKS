@@ -1,11 +1,17 @@
 import React from 'react'
+import Clock from './Clock'
 
-const Sound = () => {
-  return(
-    <div className='clock'>
-      Sound
-    </div>
-  )
+class Sound extends Clock {
+
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return(
+      <div className='clock'>Sound</div>
+    )
+  }
 }
 
 export default Sound
