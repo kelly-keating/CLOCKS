@@ -4,6 +4,8 @@ import Colour from './Colour'
 import Sound from './Sound'
 import Circle from './Circle'
 import Wheel from './Wheel'
+import Actual from './Actual'
+
 
 class Clock extends React.Component {
 
@@ -37,7 +39,7 @@ class Clock extends React.Component {
       case 4:
         return <Wheel/>;
       default:
-        return 'Clock';
+        return <Actual/>;
     }
   }
 

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Wheel = () => {
+const Actual = () => {
   return(
     <div className='clock'>
-      Wheel
+      Actual
     </div>
   )
 }
 
-export default Wheel
+export default Actual
