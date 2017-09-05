@@ -2,7 +2,7 @@ import React from 'react'
 
 const Circle = () => {
   return(
-    <div>
+    <div className='clock'>
       <h1>Circle</h1>
     </div>
   )

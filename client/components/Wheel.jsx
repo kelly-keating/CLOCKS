@@ -2,7 +2,7 @@ import React from 'react'
 
 const Wheel = () => {
   return(
-    <div>
+    <div className='clock'>
       <h1>Wheel</h1>
     </div>
   )

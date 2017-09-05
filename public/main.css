@@ -1,13 +1,13 @@
 body{
-  background-color: #454649;
+  background-color: #900C3F;
   font-family: Arial, sans-serif;
-  color: #222222;
   text-align: center;
+  color: white;
 }
 
 a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 #home{
@@ -18,9 +18,10 @@ a {
 }
 
 #time, #backIn {
-  font-size: 10vh;
+  font-size: 30vh;
 }
 
 .clock {
-  font-size: 35vh;
+  font-size: 10vh;
+  color: #222222;
 }

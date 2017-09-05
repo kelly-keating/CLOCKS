@@ -12,7 +12,12 @@ class Clock extends React.Component {
   }
 
   componentDidMount(){
-    setInterval(() => {this.recolour()}, 50)
+    this.myInterval = setInterval(() => {this.recolour()}, 50)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.myInterval);
+    document.body.style.backgroundColor = "#900C3F";
   }
 
   recolour() {

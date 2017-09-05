@@ -13,6 +13,17 @@ class Clock extends React.Component {
       page: 0
     }
     this.changePageUp = this.changePageUp.bind(this);
+    this.changePageDown = this.changePageDown.bind(this);
+  }
+
+  changePageUp () {
+    var page = this.state.page
+    this.setState({page: page < 4 ? page + 1 : 0 })
+  }
+
+  changePageDown () {
+    var page = this.state.page
+    this.setState({page: page > 0 ? page - 1 : 4 })
   }
 
   getPage (num) {
@@ -30,23 +41,11 @@ class Clock extends React.Component {
     }
   }
 
-  changePageUp () {
-    var page = this.state.page
-    this.setState({page: page > 3 ? 0 : page + 1 })
-    console.log(this.state)
-  }
-
-  changePage(diff) {
-    var next = this.state.page + diff
-    if (diff > 4) { next = 0 }
-    else if (diff < 0) { next = 4 }
-    this.setState({page: next})
-  }
-
   render () {
     return (
       <div>
-        <div id='backIn'>BACK IN {this.state.page}</div>
+        <div id='backIn' onClick={this.changePageDown}>BACK IN</div>
+        {this.getPage(this.state.page)}
         <div id='time' onClick={this.changePageUp}>TIME</div>
       </div>
     )
