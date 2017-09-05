@@ -1,0 +1,20 @@
+.body{
+  background-color: #C0FFEE
+}
+
+#clock {
+  font-size: 35vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#time {
+  font-size: 10vh;
+  color: #222222;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
