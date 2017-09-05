@@ -23,5 +23,7 @@ a {
 
 .clock {
   font-size: 10vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   color: #222222;
 }
