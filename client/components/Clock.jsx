@@ -1,57 +1,33 @@
 import React from 'react'
 
-import Colour from './Colour'
-import Sound from './Sound'
-import Circle from './Circle'
-import Wheel from './Wheel'
-import Actual from './Actual'
-
-
 class Clock extends React.Component {
 
   constructor (props) {
     super(props)
     this.state = {
-      page: 0
-    }
-    this.changePageUp = this.changePageUp.bind(this);
-    this.changePageDown = this.changePageDown.bind(this);
-  }
-
-  changePageUp () {
-    var page = this.state.page
-    this.setState({page: page < 4 ? page + 1 : 0 })
-  }
-
-  changePageDown () {
-    var page = this.state.page
-    this.setState({page: page > 0 ? page - 1 : 4 })
-  }
-
-  getPage (num) {
-    switch (num) {
-      case 1:
-        return <Colour/>;
-      case 2:
-        return <Sound/>;
-      case 3:
-        return <Circle/>;
-      case 4:
-        return <Wheel/>;
-      default:
-        return <Actual/>;
+      h: 0,
+      m: 0,
+      s: 0
     }
   }
 
-  render () {
-    return (
-      <div>
-        <div id='backIn' onClick={this.changePageDown}>BACK IN</div>
-        {this.getPage(this.state.page)}
-        <div id='time' onClick={this.changePageUp}>TIME</div>
-      </div>
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      h: nextProps.time.h,
+      m: nextProps.time.m,
+      s: nextProps.time.s
+    })
+  }
+
+  render(){
+    var h = this.state.h;
+    var m = this.state.m;
+    var s = this.state.s;
+    return(
+      <div className='clock'>{h}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s}</div>
     )
   }
+
 }
 
 export default Clock
