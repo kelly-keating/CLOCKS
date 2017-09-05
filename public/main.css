@@ -1,12 +1,12 @@
-.body{
-  background-color: #C0FFEE
+body{
+  background-color: #C0FFEE;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
 }
 
 #clock {
   font-size: 35vh;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
 }
 
 #time {

@@ -30,32 +30,20 @@ class Clock extends React.Component {
     document.body.style.backgroundColor = `rgb(${s},${m},${h})`
   }
 
-  linkToClock() {
-    return (
-      <div id='clock'><Link to='/clock'>TIME</Link></div>
-    )
-  }
-
-  ownPage() {
+  colourTime() {
     var date = new Date()
     var s = date.getSeconds()
     var m = date.getMinutes()
     var h = date.getHours()
 
     return(
-      <div id='clock'>
-        TIME
-        <div id='time'>#{h}:{m}:{s}</div>
-        <Link to='/'>BACK IN</Link>
-      </div>
+      <div id='time'>#{h}:{m}:{s}</div>
     )
   }
 
   render(){
-    var page = this.props.location.pathname
-    var content = (page === '/clock') ? this.ownPage() : this.linkToClock()
     return(
-      content
+      this.colourTime()
     )
   }
 
