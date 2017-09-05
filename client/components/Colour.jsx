@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 class Clock extends React.Component {
 
@@ -37,7 +36,7 @@ class Clock extends React.Component {
     var h = date.getHours()
 
     return(
-      <div id='time'>#{h}:{m}:{s}</div>
+      <div className='clock'>#{h}:{m}:{s}</div>
     )
   }
 

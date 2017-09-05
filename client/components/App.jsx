@@ -1,8 +1,8 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
-import Header from './Header'
 import Home from './Home'
+import Clock from './Clock'
 
 
 const App = props => {
@@ -12,7 +12,7 @@ const App = props => {
       <Router>
         <div>
           <Route exact path='/' component={Home}/>
-          <Route path='/time' component={Header}/>
+          <Route path='/time' component={Clock}/>
         </div>
       </Router>
     </div>

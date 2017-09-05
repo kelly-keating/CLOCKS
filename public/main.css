@@ -1,20 +1,26 @@
 body{
-  background-color: #C0FFEE;
+  background-color: #454649;
   font-family: Arial, sans-serif;
-  color: white;
+  color: #222222;
   text-align: center;
 }
 
-#clock {
-  font-size: 35vh;
-}
-
-#time {
-  font-size: 10vh;
-  color: #222222;
-}
-
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+}
+
+#home{
+  position: absolute;
+  top: 50vh;
+  margin-top: -30vmin;
+  font-size: 60vmin;
+}
+
+#time, #backIn {
+  font-size: 10vh;
+}
+
+.clock {
+  font-size: 35vh;
 }
