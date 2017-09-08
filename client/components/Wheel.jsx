@@ -24,11 +24,13 @@ class Wheel extends Clock{
     var ctx = can.getContext('2d');
 
     var cx = 100;
-    var cy  =100;
+    var cy = 35;
+
+    ctx.clearRect(0, 0, can.width, can.height)
 
     ctx.beginPath();
     ctx.moveTo(cx,cy);
-    ctx.arc(cx,cy,30,0,toRadians(seconds));
+    ctx.arc(cx,cy,30,0,toRadians(seconds*6));
     ctx.lineTo(cx,cy);
     ctx.closePath();
     ctx.fill();
@@ -39,7 +41,7 @@ class Wheel extends Clock{
   render() {
     return(
       <div className='clock'>
-        <canvas id="canvas1" width="200px" height="200px"></canvas>
+        <canvas id="canvas1" width="200px" height="70px"></canvas>
       </div>
     )
   }
