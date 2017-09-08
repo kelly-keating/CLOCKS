@@ -48,8 +48,8 @@ class Wheel extends Clock{
   }
 }
 
-function toRadians(amt) { // takes 360 and turns to rads
-  return 2 * Math.PI * amt / 60
+function toRadians(amt) {
+  return 2 * Math.PI * (amt+1) / 60
 }
 
 export default Wheel
