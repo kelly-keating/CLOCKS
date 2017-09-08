@@ -25,12 +25,13 @@ class Wheel extends Clock{
 
     var cx = 100;
     var cy = 35;
+    var startAng = -0.5 * Math.PI
 
     ctx.clearRect(0, 0, can.width, can.height)
 
     ctx.beginPath();
     ctx.moveTo(cx,cy);
-    ctx.arc(cx,cy,30,0,toRadians(seconds*6));
+    ctx.arc(cx,cy,30,startAng,toRadians(seconds)+startAng);
     ctx.lineTo(cx,cy);
     ctx.closePath();
     ctx.fill();
@@ -47,8 +48,8 @@ class Wheel extends Clock{
   }
 }
 
-function toRadians(deg) {
-  return deg * Math.PI / 180
+function toRadians(amt) { // takes 360 and turns to rads
+  return 2 * Math.PI * amt / 60
 }
 
 export default Wheel
