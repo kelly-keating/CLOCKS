@@ -24,7 +24,7 @@ class ClockInterface extends React.Component {
   }
 
   componentDidMount(){
-    this.myInterval = setInterval(() => {this.tick()}, 50)
+    this.myInterval = setInterval(() => {this.tick()}, 500)
   }
 
   componentWillUnmount() {
