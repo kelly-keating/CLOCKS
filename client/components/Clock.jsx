@@ -24,7 +24,7 @@ class Clock extends React.Component {
     var m = this.state.m;
     var s = this.state.s;
     return(
-      <div className='clock'>{h}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s}</div>
+      <div className='clock'>{h%12}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s} {h > 12 ? 'PM' : 'AM'}</div>
     )
   }
 
