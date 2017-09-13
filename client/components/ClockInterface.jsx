@@ -56,7 +56,7 @@ class ClockInterface extends React.Component {
   getPage (num) {
     switch (num) {
       case 1:
-        return <Colour time={this.state.time}/>;
+        return <Bars time={this.state.time}/>;
       case 2:
         return <Colour time={this.state.time}/>;
       case 3:
