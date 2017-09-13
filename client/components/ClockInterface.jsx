@@ -73,9 +73,9 @@ class ClockInterface extends React.Component {
   render () {
     return (
       <div>
-        <div id='backIn' onClick={this.changePageDown}>BACK IN</div>
+        <div id='goBack' onClick={this.changePageDown}>GO BACK</div>
         {this.getPage(this.state.page)}
-        <div id='time' onClick={this.changePageUp}>TIME</div>
+        <div id='inTime' onClick={this.changePageUp}>IN TIME</div>
       </div>
     )
   }
