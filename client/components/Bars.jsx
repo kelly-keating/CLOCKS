@@ -13,9 +13,9 @@ class Bars extends Clock {
   render() {
     return(
       <div className='clock'>
-        <div className='timeBar' style={{width : this.barLength(this.state.h%12, 12)}}/>
-        <div className='timeBar' style={{width : this.barLength(this.state.m, 60)}}/>
-        <div className='timeBar' style={{width : this.barLength(this.state.s, 60)}}/>
+        <div className='timeBar' style={{width : this.barLength(this.state.h%12, 11)}}/>
+        <div className='timeBar' style={{width : this.barLength(this.state.m, 59)}}/>
+        <div className='timeBar' style={{width : this.barLength(this.state.s, 59)}}/>
       </div>
     )
   }

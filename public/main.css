@@ -24,13 +24,13 @@ a {
 
 .clock {
   font-size: 10vh;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 8vh;
+  margin-bottom: 8vh;
   color: #222222;
 }
 
 .timeBar {
-  height: 20px;
+  height: 30px;
   left: 0vw;
   background-color: black;
 }
