@@ -28,7 +28,7 @@ class Wheel extends Clock{
 
     ctx.clearRect(0, 0, can.width, can.height)
 
-    this.drawOneCircle(ctx, 50, cy, startAng, getEnd(hour%12, startAng, true))
+    this.drawOneCircle(ctx, 50, cy, startAng, getEnd(hour, startAng, true))
     this.drawOneCircle(ctx, 150, cy, startAng, getEnd(minutes, startAng))
     this.drawOneCircle(ctx, 250, cy, startAng, getEnd(seconds, startAng))
   }
@@ -55,7 +55,8 @@ class Wheel extends Clock{
 }
 
 function getEnd(amt, startAng, isHour) {
-  return (2 * Math.PI * (amt+1) / (isHour ? 12 : 60)) + startAng
+  var ratio = isHour ? (amt%12)/12 : amt/60
+  return (2 * Math.PI * ratio) + startAng
 }
 
 export default Wheel
