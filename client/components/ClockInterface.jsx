@@ -60,11 +60,11 @@ class ClockInterface extends React.Component {
       case 2:
         return <Colour time={this.state.time}/>;
       case 3:
-        return <Sound time={this.state.time}/>;
-      case 4:
-        return <Circle time={this.state.time}/>;
-      case 5:
         return <Wheel time={this.state.time}/>;
+      case 4:
+        return <Sound time={this.state.time}/>;
+      case 5:
+        return <Circle time={this.state.time}/>;
       default:
         return <Clock time={this.state.time}/>;
     }
