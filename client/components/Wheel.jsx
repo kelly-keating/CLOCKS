@@ -16,10 +16,10 @@ class Wheel extends Clock{
       m: nextProps.time.m,
       s: nextProps.time.s
     }) //necessary??
-    this.drawCircles(nextProps.time.s)
+    this.drawCircles(nextProps.time.h, nextProps.time.m, nextProps.time.s)
   }
 
-  drawCircles(seconds){
+  drawCircles(hour, minutes, seconds){
     var can = document.getElementById('canvas1');
     var ctx = can.getContext('2d');
 
@@ -28,8 +28,8 @@ class Wheel extends Clock{
 
     ctx.clearRect(0, 0, can.width, can.height)
 
-    this.drawOneCircle(ctx, 50, cy, startAng, getEnd(seconds, startAng))
-    this.drawOneCircle(ctx, 150, cy, startAng, getEnd(seconds, startAng))
+    this.drawOneCircle(ctx, 50, cy, startAng, getEnd(hour%12, startAng, true))
+    this.drawOneCircle(ctx, 150, cy, startAng, getEnd(minutes, startAng))
     this.drawOneCircle(ctx, 250, cy, startAng, getEnd(seconds, startAng))
   }
 
@@ -40,6 +40,9 @@ class Wheel extends Clock{
     ctx.lineTo(cx,cy);
     ctx.closePath();
     ctx.fill();
+    ctx.beginPath();
+    ctx.arc(cx,cy,30,0,2*Math.PI);
+    ctx.stroke();
   }
 
   render() {
@@ -51,8 +54,8 @@ class Wheel extends Clock{
   }
 }
 
-function getEnd(amt, startAng) {
-  return (2 * Math.PI * (amt+1) / 60) + startAng
+function getEnd(amt, startAng, isHour) {
+  return (2 * Math.PI * (amt+1) / (isHour ? 12 : 60)) + startAng
 }
 
 export default Wheel
