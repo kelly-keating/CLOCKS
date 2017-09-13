@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Bars from './Bars'
 import Colour from './Colour'
 import Sound from './Sound'
 import Circle from './Circle'
@@ -44,12 +45,12 @@ class ClockInterface extends React.Component {
 
   changePageUp () {
     var page = this.state.page
-    this.setState({page: page < 4 ? page + 1 : 0 })
+    this.setState({page: page < 5 ? page + 1 : 0 })
   }
 
   changePageDown () {
     var page = this.state.page
-    this.setState({page: page > 0 ? page - 1 : 4 })
+    this.setState({page: page > 0 ? page - 1 : 5 })
   }
 
   getPage (num) {
@@ -57,10 +58,12 @@ class ClockInterface extends React.Component {
       case 1:
         return <Colour time={this.state.time}/>;
       case 2:
-        return <Sound time={this.state.time}/>;
+        return <Colour time={this.state.time}/>;
       case 3:
-        return <Circle time={this.state.time}/>;
+        return <Sound time={this.state.time}/>;
       case 4:
+        return <Circle time={this.state.time}/>;
+      case 5:
         return <Wheel time={this.state.time}/>;
       default:
         return <Clock time={this.state.time}/>;
