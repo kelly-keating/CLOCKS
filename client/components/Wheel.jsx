@@ -7,7 +7,7 @@ class Wheel extends Clock{
   }
 
   componentDidMount(){
-    this.drawSecs(this.state.seconds)
+    this.drawCircles(this.state.seconds)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -16,40 +16,43 @@ class Wheel extends Clock{
       m: nextProps.time.m,
       s: nextProps.time.s
     }) //necessary??
-    this.drawSecs(nextProps.time.s)
+    this.drawCircles(nextProps.time.s)
   }
 
-  drawSecs(seconds){
+  drawCircles(seconds){
     var can = document.getElementById('canvas1');
     var ctx = can.getContext('2d');
 
-    var cx = 100;
     var cy = 35;
     var startAng = -0.5 * Math.PI
 
     ctx.clearRect(0, 0, can.width, can.height)
 
+    this.drawOneCircle(ctx, 50, cy, startAng, getEnd(seconds, startAng))
+    this.drawOneCircle(ctx, 150, cy, startAng, getEnd(seconds, startAng))
+    this.drawOneCircle(ctx, 250, cy, startAng, getEnd(seconds, startAng))
+  }
+
+  drawOneCircle(ctx, cx, cy, startAng, endAng){
     ctx.beginPath();
     ctx.moveTo(cx,cy);
-    ctx.arc(cx,cy,30,startAng,toRadians(seconds)+startAng);
+    ctx.arc(cx,cy,30,startAng,endAng);
     ctx.lineTo(cx,cy);
     ctx.closePath();
     ctx.fill();
-
-    return null
   }
 
   render() {
     return(
       <div className='clock'>
-        <canvas id="canvas1" width="200px" height="70px"></canvas>
+        <canvas id="canvas1" width="300px" height="70px"></canvas>
       </div>
     )
   }
 }
 
-function toRadians(amt) {
-  return 2 * Math.PI * (amt+1) / 60
+function getEnd(amt, startAng) {
+  return (2 * Math.PI * (amt+1) / 60) + startAng
 }
 
 export default Wheel
