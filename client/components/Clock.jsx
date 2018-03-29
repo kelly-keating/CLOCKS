@@ -11,20 +11,15 @@ class Clock extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      h: nextProps.time.h,
-      m: nextProps.time.m,
-      s: nextProps.time.s
-    })
+  componentWillReceiveProps({time}) {
+    const {h, m, s} = time
+    this.setState({h,m,s})
   }
 
   render(){
-    var h = this.state.h;
-    var m = this.state.m;
-    var s = this.state.s;
+    const {h, m ,s} = this.state
     return(
-      <div className='clock'>{h%12}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s} {h > 12 ? 'PM' : 'AM'}</div>
+      <div className='clock'>{h%12 ? h%12 : 12}:{m < 10 ? '0' + m : m}:{s < 10 ? '0' + s : s} {h > 11 ? 'PM' : 'AM'}</div>
     )
   }
 
